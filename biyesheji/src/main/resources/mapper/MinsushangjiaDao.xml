@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.MinsushangjiaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.MinsushangjiaEntity" id="minsushangjiaMap">
+        <result property="minsuhao" column="minsuhao"/>
+        <result property="mima" column="mima"/>
+        <result property="minsumingcheng" column="minsumingcheng"/>
+        <result property="minsudizhi" column="minsudizhi"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="yingyezhizhao" column="yingyezhizhao"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.MinsushangjiaVO" >
+		SELECT * FROM minsushangjia  minsushangjia         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.MinsushangjiaVO" >
+		SELECT  minsushangjia.* FROM minsushangjia  minsushangjia 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.MinsushangjiaView" >
+
+		SELECT  minsushangjia.* FROM minsushangjia  minsushangjia 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.MinsushangjiaView" >
+		SELECT * FROM minsushangjia  minsushangjia <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
